@@ -10,6 +10,12 @@ export let config : Config ={
     onPrepare : function(){
         browser.waitForAngularEnabled(false);
         browser.manage().window().maximize();
+    },
+
+    jasmineNodeOpts : {
+        showColors : true,
+        defaultTimeoutInterval : 50000
     }
+
     
 }
