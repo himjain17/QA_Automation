@@ -47,21 +47,39 @@ export class RegisterPage{
 
 
     async fillRegistrationForm(testData : any){
-        this.firstName.sendKeys(testData.firstName)
-        this.lastName.sendKeys(testData.lastName)
-        this.phone.sendKeys(testData.phone)
-        this.email.sendKeys(testData.email)
-        this.address1.sendKeys(testData.address1)
-        this.address2.sendKeys(testData.address2)
-        this.city.sendKeys(testData.city)
-        this.state.sendKeys(testData.state)
-        this.postalCode.sendKeys(testData.postalCode)
-        await this.country.click();
-        await (await globalMethods.selectValueByVisibleText(this.countryValues,testData.country)).click(); 
-        this.userName.sendKeys(testData.userName)
-        this.password.sendKeys(testData.password)
-        this.confirmPassword.sendKeys(testData.confirmPassword)
-        await this.submit.click();
+
+        await globalMethods.setValueToTextField(this.firstName,testData.firstName)
+        await globalMethods.setValueToTextField(this.lastName,testData.lastName)
+        await globalMethods.setValueToTextField(this.phone,testData.phone)
+        await globalMethods.setValueToTextField(this.email,testData.email)
+        await globalMethods.setValueToTextField(this.address1,testData.address1)
+        await globalMethods.setValueToTextField(this.address2,testData.address2)
+        await globalMethods.setValueToTextField(this.city,testData.city)
+        await globalMethods.setValueToTextField(this.state,testData.state)
+        await globalMethods.setValueToTextField(this.postalCode,testData.postalCode)
+        await globalMethods.clickOnElement(this.country);
+        await globalMethods.selectValueByVisibleText(this.countryValues,testData.country);
+        await globalMethods.setValueToTextField(this.userName,testData.userName)
+        await globalMethods.setValueToTextField(this.password,testData.password)
+        await globalMethods.setValueToTextField(this.confirmPassword,testData.confirmPassword)
+        await globalMethods.clickOnElement(this.submit);
+        
+
+        // this.firstName.sendKeys(testData.firstName)
+        // this.lastName.sendKeys(testData.lastName)
+        // this.phone.sendKeys(testData.phone)
+        // this.email.sendKeys(testData.email)
+        // this.address1.sendKeys(testData.address1)
+        // this.address2.sendKeys(testData.address2)
+        // this.city.sendKeys(testData.city)
+        // this.state.sendKeys(testData.state)
+        // this.postalCode.sendKeys(testData.postalCode)
+        // await this.country.click();
+        // await (await globalMethods.selectValueByVisibleText(this.countryValues,testData.country)).click(); 
+        // this.userName.sendKeys(testData.userName)
+        // this.password.sendKeys(testData.password)
+        // this.confirmPassword.sendKeys(testData.confirmPassword)
+        // await this.submit.click();
 
         
     }

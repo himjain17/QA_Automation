@@ -1,4 +1,13 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
@@ -14,14 +23,10 @@ const testData = __importStar(require("../testData/registrationData.json"));
 const registerPage = new registerPage_1.RegisterPage();
 const homePage = new homePage_1.HomePage();
 describe('Fill registration Form', () => {
-    // console.log("path---> "+process.cwd())
-    // const filePath = process.cwd() + "testData\\rigistrationData.json"
-    // const testDataObject = util.convertJSONFileIntoJSObject(filePath)
-    // console.log((<any>testData).firstName)
-    it('fill contact Details', () => {
-        protractor_1.browser.get('http://newtours.demoaut.com/mercurywelcome.php');
+    it('fill contact Details', () => __awaiter(void 0, void 0, void 0, function* () {
+        yield protractor_1.browser.get('http://newtours.demoaut.com/mercurywelcome.php');
         homePage.navigateToRegisterPage();
         registerPage.fillRegistrationForm(testData);
-    });
+    }));
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmVnaXN0ZXJQYWdlLnNwZWMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcGVjcy9yZWdpc3RlclBhZ2Uuc3BlYy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFBQSx3REFBcUQ7QUFDckQsZ0RBQTZDO0FBQzdDLDJDQUFxQztBQUNyQyw0RUFBOEQ7QUFHOUQsTUFBTSxZQUFZLEdBQUcsSUFBSSwyQkFBWSxFQUFFLENBQUM7QUFDeEMsTUFBTSxRQUFRLEdBQUcsSUFBSSxtQkFBUSxFQUFFLENBQUM7QUFHaEMsUUFBUSxDQUFDLHdCQUF3QixFQUFDLEdBQUcsRUFBRTtJQUVuQyx5Q0FBeUM7SUFDekMscUVBQXFFO0lBQ3JFLG9FQUFvRTtJQUNwRSx5Q0FBeUM7SUFHekMsRUFBRSxDQUFDLHNCQUFzQixFQUFDLEdBQUcsRUFBRTtRQUMzQixvQkFBTyxDQUFDLEdBQUcsQ0FBQyxnREFBZ0QsQ0FBQyxDQUFDO1FBQzlELFFBQVEsQ0FBQyxzQkFBc0IsRUFBRSxDQUFDO1FBQ2xDLFlBQVksQ0FBQyxvQkFBb0IsQ0FBQyxRQUFRLENBQUMsQ0FBQztJQUNoRCxDQUFDLENBQUMsQ0FBQTtBQUNOLENBQUMsQ0FBQyxDQUFBIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmVnaXN0ZXJQYWdlLnNwZWMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcGVjcy9yZWdpc3RlclBhZ2Uuc3BlYy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSx3REFBcUQ7QUFDckQsZ0RBQTZDO0FBQzdDLDJDQUFxQztBQUNyQyw0RUFBOEQ7QUFHOUQsTUFBTSxZQUFZLEdBQUcsSUFBSSwyQkFBWSxFQUFFLENBQUM7QUFDeEMsTUFBTSxRQUFRLEdBQUcsSUFBSSxtQkFBUSxFQUFFLENBQUM7QUFHaEMsUUFBUSxDQUFDLHdCQUF3QixFQUFDLEdBQUcsRUFBRTtJQUVuQyxFQUFFLENBQUMsc0JBQXNCLEVBQUMsR0FBUyxFQUFFO1FBQ2pDLE1BQU0sb0JBQU8sQ0FBQyxHQUFHLENBQUMsZ0RBQWdELENBQUMsQ0FBQztRQUNwRSxRQUFRLENBQUMsc0JBQXNCLEVBQUUsQ0FBQztRQUNsQyxZQUFZLENBQUMsb0JBQW9CLENBQUMsUUFBUSxDQUFDLENBQUM7SUFDaEQsQ0FBQyxDQUFBLENBQUMsQ0FBQTtBQUNOLENBQUMsQ0FBQyxDQUFBIn0=

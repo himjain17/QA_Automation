@@ -10,14 +10,8 @@ const homePage = new HomePage();
 
 describe('Fill registration Form',() => {
 
-    // console.log("path---> "+process.cwd())
-    // const filePath = process.cwd() + "testData\\rigistrationData.json"
-    // const testDataObject = util.convertJSONFileIntoJSObject(filePath)
-    // console.log((<any>testData).firstName)
-
-
-    it('fill contact Details',() => {
-        browser.get('http://newtours.demoaut.com/mercurywelcome.php');
+    it('fill contact Details',async () => {
+        await browser.get('http://newtours.demoaut.com/mercurywelcome.php');
         homePage.navigateToRegisterPage();
         registerPage.fillRegistrationForm(testData);
     })
