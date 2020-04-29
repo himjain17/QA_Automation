@@ -20,6 +20,8 @@ export class RegisterPage{
     password : ElementFinder
     confirmPassword : ElementFinder
     submit : ElementFinder
+
+    
     
 
 
@@ -44,21 +46,21 @@ export class RegisterPage{
 
 
 
-    async fillRegistrationForm(){
-        this.firstName.sendKeys('Himanshu')
-        this.lastName.sendKeys('Jain')
-        this.phone.sendKeys('9123456789')
-        this.email.sendKeys('test@test.com')
-        this.address1.sendKeys('testAddress1')
-        this.address2.sendKeys('testAddress2')
-        this.city.sendKeys('Pune')
-        this.state.sendKeys('Maharashtra')
-        this.postalCode.sendKeys('411057')
+    async fillRegistrationForm(testData : any){
+        this.firstName.sendKeys(testData.firstName)
+        this.lastName.sendKeys(testData.lastName)
+        this.phone.sendKeys(testData.phone)
+        this.email.sendKeys(testData.email)
+        this.address1.sendKeys(testData.address1)
+        this.address2.sendKeys(testData.address2)
+        this.city.sendKeys(testData.city)
+        this.state.sendKeys(testData.state)
+        this.postalCode.sendKeys(testData.postalCode)
         await this.country.click();
-        await (await globalMethods.selectValueByVisibleText(this.countryValues,'INDIA')).click(); 
-        this.userName.sendKeys('demo123')
-        this.password.sendKeys('demoPass123')
-        this.confirmPassword.sendKeys('demoPass123')
+        await (await globalMethods.selectValueByVisibleText(this.countryValues,testData.country)).click(); 
+        this.userName.sendKeys(testData.userName)
+        this.password.sendKeys(testData.password)
+        this.confirmPassword.sendKeys(testData.confirmPassword)
         await this.submit.click();
 
         

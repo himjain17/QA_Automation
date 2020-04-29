@@ -1,0 +1,16 @@
+
+{
+    "firstName" : "Himanshu",
+    "lastName" : "Jain",
+    "phone" : "9123456789",
+    "email" : "test@test.com",
+    "address1" : "testAddress1",
+    "address2" : "testAddress2",
+    "city"  : "Pune",
+    "state" : "Maharashtra",
+    "country" : "INDIA",
+    "postalCode" : "411057",
+    "userName" :"demo123",
+    "password" : "demoPass123",
+    "confirmPassword" : "demoPass123"
+}

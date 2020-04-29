@@ -1,4 +1,5 @@
 import { ElementArrayFinder, ElementFinder } from "protractor"
+import fs from 'fs';
 
 
 export class GlobalMethods{
@@ -19,5 +20,9 @@ export class GlobalMethods{
                             } 
                     }).first();
                 }
+
+    
+                
+    
 
 }
