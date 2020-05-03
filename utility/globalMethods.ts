@@ -41,7 +41,7 @@ export class GlobalMethods{
 
     async clickOnElement(elementName:ElementFinder){
         try{
-            await browser.wait(ExpectedConditions.elementToBeClickable(elementName),5000);
+            await browser.wait(ExpectedConditions.elementToBeClickable(elementName),5000,`${elementName} is not present on UI.`);
             await browser.actions().mouseMove(elementName).perform();
             await browser.actions().click().perform();
         }
