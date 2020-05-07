@@ -15,9 +15,9 @@ export class SignOnPage{
         this.submit = element(by.css('input[name="login"]'));
     }
 
-    async signInApplication(testData:any){
-        await globalMethods.setValueToTextField(this.userName,testData.signOnData.userName);
-        await globalMethods.setValueToTextField(this.password,testData.signOnData.password);
+    async loginToApplication(testData:any){
+        await globalMethods.setValueToTextField(this.userName,testData.userName);
+        await globalMethods.setValueToTextField(this.password,testData.password);
         await globalMethods.clickOnElement(this.submit);
     }
 
