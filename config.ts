@@ -2,11 +2,14 @@ import {Config, browser} from "protractor";
 
 export let config : Config ={
     directConnect : true,
+    
     //seleniumAddress : 'http://localhost:4444/wd/hub',
-    specs : ['../jsFile/specs/registerPage.spec.js'],
+    specs : ['../jsFile/specs/loginPage.spec.js'],
     capabilities : {
         browserName : 'chrome'
     },
+    getPageTimeout : 20000,
+    
     onPrepare : function(){
         browser.waitForAngularEnabled(false);
         browser.manage().window().maximize();
@@ -14,7 +17,7 @@ export let config : Config ={
 
     jasmineNodeOpts : {
         showColors : true,
-        defaultTimeoutInterval : 50000
+        defaultTimeoutInterval : 80000
     }
 
     
