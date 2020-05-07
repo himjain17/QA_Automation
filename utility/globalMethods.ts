@@ -1,4 +1,4 @@
-import { ElementArrayFinder, ElementFinder, ExpectedConditions, browser } from "protractor"
+import { ElementArrayFinder, ElementFinder, ExpectedConditions, browser, by, element } from "protractor"
 
 
 
@@ -9,11 +9,17 @@ export class GlobalMethods{
     constructor(){
     }
 
-    selectValueByVisibleText = async function(countryListElements:ElementArrayFinder, elementToBeSelect:string)
+    selectRadioButtonByVisibleText(customCSSPathOfElement: string,elementToBeSelect:string){
+            let ele = element(by.css(customCSSPathOfElement + elementToBeSelect + '"]'))
+            this.clickOnElement(ele);
+    }
+
+
+    selectValueByVisibleText = async function(ListOfElements:ElementArrayFinder, elementToBeSelect:string)
             {
                let matchedElement : ElementFinder ;
                try{
-                return await countryListElements.filter(async (element)=>{
+                return await ListOfElements.filter(async (element)=>{
                     const text = await element.getAttribute('innerText');
                     if (text.trim() === elementToBeSelect) {
                         matchedElement = element;
@@ -49,7 +55,12 @@ export class GlobalMethods{
             console.log(err)
             
         }
-        
+    }
+
+    async getElementText(elementName:ElementFinder,text:string):Promise<string>{
+        await browser.wait(ExpectedConditions.textToBePresentInElement(elementName,text),5000,
+                    `${text} is not belong to ${elementName}`)
+        return await elementName.getText();
     }
     
 
