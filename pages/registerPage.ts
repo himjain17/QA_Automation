@@ -48,20 +48,20 @@ export class RegisterPage{
 
     async fillRegistrationForm(testData : any){
 
-        await globalMethods.setValueToTextField(this.firstName,testData.firstName)
-        await globalMethods.setValueToTextField(this.lastName,testData.lastName)
-        await globalMethods.setValueToTextField(this.phone,testData.phone)
-        await globalMethods.setValueToTextField(this.email,testData.email)
-        await globalMethods.setValueToTextField(this.address1,testData.address1)
-        await globalMethods.setValueToTextField(this.address2,testData.address2)
-        await globalMethods.setValueToTextField(this.city,testData.city)
-        await globalMethods.setValueToTextField(this.state,testData.state)
-        await globalMethods.setValueToTextField(this.postalCode,testData.postalCode)
+        await globalMethods.setValueToTextField(this.firstName,testData.registerFormData.firstName)
+        await globalMethods.setValueToTextField(this.lastName,testData.registerFormData.lastName)
+        await globalMethods.setValueToTextField(this.phone,testData.registerFormData.phone)
+        await globalMethods.setValueToTextField(this.email,testData.registerFormData.email)
+        await globalMethods.setValueToTextField(this.address1,testData.registerFormData.address1)
+        await globalMethods.setValueToTextField(this.address2,testData.registerFormData.address2)
+        await globalMethods.setValueToTextField(this.city,testData.registerFormData.city)
+        await globalMethods.setValueToTextField(this.state,testData.registerFormData.state)
+        await globalMethods.setValueToTextField(this.postalCode,testData.registerFormData.postalCode)
         await globalMethods.clickOnElement(this.country);
-        await globalMethods.selectValueByVisibleText(this.countryValues,testData.country);
-        await globalMethods.setValueToTextField(this.userName,testData.userName)
-        await globalMethods.setValueToTextField(this.password,testData.password)
-        await globalMethods.setValueToTextField(this.confirmPassword,testData.confirmPassword)
+        await globalMethods.selectValueByVisibleText(this.countryValues,testData.registerFormData.country);
+        await globalMethods.setValueToTextField(this.userName,testData.registerFormData.userName)
+        await globalMethods.setValueToTextField(this.password,testData.registerFormData.password)
+        await globalMethods.setValueToTextField(this.confirmPassword,testData.registerFormData.confirmPassword)
         await globalMethods.clickOnElement(this.submit);
         
 
