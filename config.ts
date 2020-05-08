@@ -17,7 +17,14 @@ export let config : Config = {
         browser.manage().window().maximize();
         //browser.manage().timeouts().implicitlyWait(10000);
         jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
-            savePath : 'target/screenshots'
+            savePath : 'target/report',
+            screenshotFolder : 'images',
+            fixedScreenshotName : true,
+            takeScreenshots : true,
+            takeScreenshotsOnlyOnFailures : false,
+            fileName : 'ExecutionReport',
+            cleanDestination : false
+            
         })
         );
     },
