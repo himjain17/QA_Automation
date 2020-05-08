@@ -15,7 +15,7 @@ export let config : Config = {
     onPrepare : function(){
         browser.waitForAngularEnabled(false);
         browser.manage().window().maximize();
-        browser.manage().timeouts().implicitlyWait(10000);
+        //browser.manage().timeouts().implicitlyWait(10000);
         jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
             savePath : 'target/screenshots'
         })

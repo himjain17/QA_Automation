@@ -18,15 +18,28 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const registerPage_1 = require("../pages/registerPage");
 const homePage_1 = require("../pages/homePage");
+const signOnPage_1 = require("../pages/signOnPage");
 const protractor_1 = require("protractor");
+const flightPage_1 = require("../pages/flightPage");
 const testData = __importStar(require("../testData/registrationData.json"));
 const registerPage = new registerPage_1.RegisterPage();
 const homePage = new homePage_1.HomePage();
+const signOnPage = new signOnPage_1.SignOnPage();
+const flightPage = new flightPage_1.FlightPage();
 describe('Fill registration Form', () => {
-    it('fill contact Details', () => __awaiter(void 0, void 0, void 0, function* () {
+    beforeEach(() => __awaiter(void 0, void 0, void 0, function* () {
         yield protractor_1.browser.get('http://newtours.demoaut.com/mercurywelcome.php');
-        homePage.navigateToRegisterPage();
-        registerPage.fillRegistrationForm(testData);
+    }));
+    // it('fill contact Details',() => {
+    //     homePage.navigateToRegisterPage();
+    //     registerPage.fillRegistrationForm(testData);
+    // })
+    it('Login to application', () => __awaiter(void 0, void 0, void 0, function* () {
+        homePage.navigateToSignOnPage();
+        signOnPage.loginToApplication(testData);
+        flightPage.bookFlight();
+        console.log('success message-->' + (yield flightPage.getTheSuccessMsg()));
+        expect(flightPage.getTheSuccessMsg()).toBe('Your itinerary has been booked!');
     }));
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmVnaXN0ZXJQYWdlLnNwZWMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcGVjcy9yZWdpc3RlclBhZ2Uuc3BlYy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSx3REFBcUQ7QUFDckQsZ0RBQTZDO0FBQzdDLDJDQUFxQztBQUNyQyw0RUFBOEQ7QUFHOUQsTUFBTSxZQUFZLEdBQUcsSUFBSSwyQkFBWSxFQUFFLENBQUM7QUFDeEMsTUFBTSxRQUFRLEdBQUcsSUFBSSxtQkFBUSxFQUFFLENBQUM7QUFHaEMsUUFBUSxDQUFDLHdCQUF3QixFQUFDLEdBQUcsRUFBRTtJQUVuQyxFQUFFLENBQUMsc0JBQXNCLEVBQUMsR0FBUyxFQUFFO1FBQ2pDLE1BQU0sb0JBQU8sQ0FBQyxHQUFHLENBQUMsZ0RBQWdELENBQUMsQ0FBQztRQUNwRSxRQUFRLENBQUMsc0JBQXNCLEVBQUUsQ0FBQztRQUNsQyxZQUFZLENBQUMsb0JBQW9CLENBQUMsUUFBUSxDQUFDLENBQUM7SUFDaEQsQ0FBQyxDQUFBLENBQUMsQ0FBQTtBQUNOLENBQUMsQ0FBQyxDQUFBIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicmVnaXN0ZXJQYWdlLnNwZWMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcGVjcy9yZWdpc3RlclBhZ2Uuc3BlYy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSx3REFBcUQ7QUFDckQsZ0RBQTZDO0FBQzdDLG9EQUFpRDtBQUNqRCwyQ0FBcUM7QUFDckMsb0RBQWlEO0FBQ2pELDRFQUE4RDtBQUc5RCxNQUFNLFlBQVksR0FBRyxJQUFJLDJCQUFZLEVBQUUsQ0FBQztBQUN4QyxNQUFNLFFBQVEsR0FBRyxJQUFJLG1CQUFRLEVBQUUsQ0FBQztBQUNoQyxNQUFNLFVBQVUsR0FBRyxJQUFJLHVCQUFVLEVBQUUsQ0FBQztBQUNwQyxNQUFNLFVBQVUsR0FBRyxJQUFJLHVCQUFVLEVBQUUsQ0FBQztBQUVwQyxRQUFRLENBQUMsd0JBQXdCLEVBQUMsR0FBRyxFQUFFO0lBRW5DLFVBQVUsQ0FBQyxHQUFRLEVBQUU7UUFDakIsTUFBTSxvQkFBTyxDQUFDLEdBQUcsQ0FBQyxnREFBZ0QsQ0FBQyxDQUFDO0lBQ3hFLENBQUMsQ0FBQSxDQUFDLENBQUE7SUFJRixvQ0FBb0M7SUFDcEMseUNBQXlDO0lBQ3pDLG1EQUFtRDtJQUNuRCxLQUFLO0lBRUwsRUFBRSxDQUFDLHNCQUFzQixFQUFDLEdBQVEsRUFBRTtRQUNoQyxRQUFRLENBQUMsb0JBQW9CLEVBQUUsQ0FBQztRQUNoQyxVQUFVLENBQUMsa0JBQWtCLENBQUMsUUFBUSxDQUFDLENBQUM7UUFDeEMsVUFBVSxDQUFDLFVBQVUsRUFBRSxDQUFDO1FBQ3hCLE9BQU8sQ0FBQyxHQUFHLENBQUMsb0JBQW9CLElBQUUsTUFBTSxVQUFVLENBQUMsZ0JBQWdCLEVBQUUsQ0FBQSxDQUFDLENBQUE7UUFDdEUsTUFBTSxDQUFDLFVBQVUsQ0FBQyxnQkFBZ0IsRUFBRSxDQUFDLENBQUMsSUFBSSxDQUFDLGlDQUFpQyxDQUFDLENBQUE7SUFDakYsQ0FBQyxDQUFBLENBQUMsQ0FBQTtBQUNOLENBQUMsQ0FBQyxDQUFBIn0=

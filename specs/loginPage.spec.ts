@@ -3,7 +3,8 @@ import { HomePage } from "../pages/homePage";
 import { FlightPage } from "../pages/flightPage";
 import { SignOnPage } from "../pages/signOnPage";
 import using from "jasmine-data-provider";
-import * as userData from "../testData/userData.json";
+//import * as userData from "../testData/userData.json";
+import {userData} from '../testData/uesrTestData'
 
 const homePage = new HomePage();
 const flightPage = new FlightPage();
