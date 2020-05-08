@@ -46,15 +46,22 @@ export class GlobalMethods{
     }
 
     async clickOnElement(elementName:ElementFinder){
-        try{
-            await browser.wait(ExpectedConditions.elementToBeClickable(elementName),5000,`${elementName} is not present on UI.`);
+        if(typeof elementName !== 'undefined'){
+            await browser.wait(ExpectedConditions.visibilityOf(elementName),5000,`${elementName} is not visible on UI.`);
+            await browser.wait(ExpectedConditions.elementToBeClickable(elementName),5000,`${elementName} is not clickable or disabled.`);
             await browser.actions().mouseMove(elementName).perform();
             await browser.actions().click().perform();
         }
-        catch(err){
-            console.log(err)
+
+        // try{
+        //     await browser.wait(ExpectedConditions.elementToBeClickable(elementName),5000,`${elementName} is not present on UI.`);
+        //     await browser.actions().mouseMove(elementName).perform();
+        //     await browser.actions().click().perform();
+        // }
+        // catch(err){
+        //     console.log(err)
             
-        }
+        // }
     }
 
     async getElementText(elementName:ElementFinder,text:string):Promise<string>{
