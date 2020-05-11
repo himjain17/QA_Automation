@@ -14,21 +14,21 @@ const flightPage = new FlightPage();
 describe('Fill registration Form',() => {
 
     beforeEach(async ()=>{
-        await browser.get('http://newtours.demoaut.com/mercurywelcome.php');
+        await browser.get('');
     })
     
     
 
-    // it('fill contact Details',() => {
-    //     homePage.navigateToRegisterPage();
-    //     registerPage.fillRegistrationForm(testData);
+    it('fill contact Details',() => {
+        homePage.navigateToRegisterPage();
+        registerPage.fillRegistrationForm(testData);
+    })
+
+    // it('Login to application',async ()=>{
+    //     homePage.navigateToSignOnPage();
+    //     signOnPage.loginToApplication(testData);
+    //     flightPage.bookFlight();
+    //     console.log('success message-->'+ await flightPage.getTheSuccessMsg())
+    //     expect(flightPage.getTheSuccessMsg()).toBe('Your itinerary has been booked!')
     // })
-
-    it('Login to application',async ()=>{
-        homePage.navigateToSignOnPage();
-        signOnPage.loginToApplication(testData);
-        flightPage.bookFlight();
-        console.log('success message-->'+ await flightPage.getTheSuccessMsg())
-        expect(flightPage.getTheSuccessMsg()).toBe('Your itinerary has been booked!')
-    })
 })

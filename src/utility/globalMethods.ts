@@ -1,4 +1,4 @@
-import { ElementArrayFinder, ElementFinder, ExpectedConditions, browser, by, element } from "protractor"
+import { ElementArrayFinder, ElementFinder, ExpectedConditions, browser, by, element } from "protractor";
 
 
 
@@ -15,10 +15,9 @@ export class GlobalMethods{
     }
 
 
-    selectValueByVisibleText = async function(ListOfElements:ElementArrayFinder, elementToBeSelect:string)
+    async selectValueByVisibleText(ListOfElements:ElementArrayFinder, elementToBeSelect:string)
             {
                let matchedElement : ElementFinder ;
-               try{
                 return await ListOfElements.filter(async (element)=>{
                     const text = await element.getAttribute('innerText');
                     if (text.trim() === elementToBeSelect) {
@@ -26,10 +25,6 @@ export class GlobalMethods{
                         return matchedElement;
                     } 
             }).click();
-                }
-               catch(err){
-                    console.log(err)
-               }
         }
 
     

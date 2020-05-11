@@ -11,7 +11,7 @@ const flightPage = new FlightPage();
 const signOnPage = new SignOnPage();
 const actualSignOffText = 'SIGN-OFF'
 
-describe('Validate Login to the Application functionality',() => {
+fdescribe('Validate Login to the Application functionality',() => {
 
     beforeAll(() => {
         browser.get('http://newtours.demoaut.com/mercurywelcome.php')

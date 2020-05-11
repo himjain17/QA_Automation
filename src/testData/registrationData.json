@@ -15,10 +15,5 @@
         "userName" :"demo123",
         "password" : "demoPass123",
         "confirmPassword" : "demoPass123"
-    },   
-    "signOnData" :
-    {
-        "userName" :"himjain17",
-        "password" : "himjain17"
     }
 }
