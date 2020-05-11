@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    
+    "target": "es6",                         
+    "module": "commonjs",                    
+    "lib": ["es2015", "es2016", "es2017"],
+     "declaration": false,                   
+     "sourceMap": false,                     
+     "outDir": "./jsFile",                   
+     "removeComments": false,                
+     "noImplicitAny": true,                 
+     "moduleResolution": "node",            
+    "esModuleInterop": true,                
+     "inlineSourceMap": true  ,      
+     "resolveJsonModule": true    
+  },
+
+  "exclude": [
+    "node_modules"
+  ]
+}
